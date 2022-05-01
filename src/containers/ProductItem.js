@@ -29,3 +29,7 @@ let ProductItem = ({ article }) => {
 const mapStateToProps = (state) => ({
   article: state.product,
 });
+
+ProductItem = connect(mapStateToProps, null)(ProductItem);
+
+export default ProductItem;

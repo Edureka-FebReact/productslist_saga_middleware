@@ -1,9 +1,16 @@
-let Button = () => {
+import React from 'react';
+import {connect} from 'react-redux'
+import {getProduct} from '../actions'
+let Button = ({getProduct}) => {
   <div>
     <br />
     <center>
-      <button className="btn btn-success">Click to see the products</button>
+      <button onClick={getProduct} className="btn btn-success">Click to see the products</button>
     </center>
   </div>;
 };
+const mapDispatchToProps = {
+  getProduct: getProduct
+}
+Button = connect(null, mapDispatchToProps)(Button);
 export default Button;

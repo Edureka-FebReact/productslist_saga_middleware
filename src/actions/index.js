@@ -1,3 +1,3 @@
-export const getProducts = () => {
+export const getProduct = () => {
     type: 'GET_PRODUCTS'
 }
