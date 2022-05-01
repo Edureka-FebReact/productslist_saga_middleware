@@ -6,10 +6,12 @@ import { Provider } from "react-redux";
 import logger from "redux-logger";
 import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
+import rootSaga from './sagas'
+import reducer from './reducers'
 const sagaMiddleware = createSagaMiddleware();
 
-const store = createStore(applymiddleware(sagaMiddleware, logger));
-sagaMiddleware.run();
+const store = createStore(reducer,applyMiddleware(sagaMiddleware, logger));
+sagaMiddleware.run(rootSaga);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
