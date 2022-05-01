@@ -1,12 +1,12 @@
 import {put,takeLatest,all} from 'redux-saga/effects'
 
-function* fetchNews() {
+function* fetchProducts() {
     const json = yield fetch("https://ngapi4.herokuapp.com/api/getProducts")
     .then(response => response.json());
-    yield put({then: "NEWS_RECEIVED", json: json})
+    yield put({then: "PRODUCTS_RECEIVED", json: json})
 }
 function* actionWatcher() {
-    yield takeLatest('GET_NEWS', fetchNews)
+    yield takeLatest('GET_PRODUCTS', fetchProducts)
 }
 
 export default function* rootSaga() {
